@@ -2,8 +2,8 @@ FROM ubuntu:20.04
 RUN apt-get update -y
 RUN apt-get install default-jdk tomcat9 -y
 EXPOSE 8080
-WORKDIR /usr/share/tomcat9/bin/
-CMD ["catalina.sh", "run"]
+#WORKDIR /usr/share/tomcat9/bin
+#CMD ["catalina.sh", "run"]
 #RUN ["systemctl start tomcat9"]
 #CMD ["git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello"]
 #WORKDIR boxfuse-sample-java-war-hello
