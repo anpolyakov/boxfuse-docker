@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 RUN apt-get update -y
-RUN apt-get install git java default-jdk tomcat9 tomcat9-admin maven
+RUN apt-get install git default-jdk tomcat9 tomcat9-admin maven
 CMD ["systemctl enable --now tomcat9"]
 CMD ["git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello"]
 WORKDIR boxfuse-sample-java-war-hello
