@@ -1,13 +1,12 @@
 FROM ubuntu:20.04
 RUN apt-get update -y
 RUN apt-get install default-jdk tomcat9 -y
-ENV CATALINA_HOME /usr/local/tomcat
+ENV CATALINA_HOME /usr/share/tomcat9
 ENV PATH $CATALINA_HOME/bin:$PATH
-RUN mkdir -p "$CATALINA_HOME"
+RUN ln -s /usr/share/tomcat9/etc /usr/share/tomcat9/conf
 WORKDIR $CATALINA_HOME
 EXPOSE 8080
-#WORKDIR /usr/share/tomcat9/bin
-CMD ["/usr/local/tomcat/catalina.sh", "run"]
+CMD ["catalina.sh", "run"]
 #RUN ["systemctl start tomcat9"]
 #CMD ["git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello"]
 #WORKDIR boxfuse-sample-java-war-hello
