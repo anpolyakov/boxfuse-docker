@@ -1,14 +1,4 @@
-FROM ubuntu:20.04
-RUN apt-get update -y
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get install tzdata -y
-RUN apt-get install git default-jdk maven tomcat9 -y
-ENV CATALINA_HOME /usr/share/tomcat9
-ENV PATH $CATALINA_HOME/bin:$PATH
-RUN mkdir -p $CATALINA_HOME/temp
-RUN mkdir -p $CATALINA_HOME/webapps
-RUN ln -s /usr/share/tomcat9/etc /usr/share/tomcat9/conf
-WORKDIR $CATALINA_HOME
+FROM tomcat:9.0
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello
