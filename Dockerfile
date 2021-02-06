@@ -7,7 +7,7 @@ RUN mkdir -p "$CATALINA_HOME"
 WORKDIR $CATALINA_HOME
 EXPOSE 8080
 #WORKDIR /usr/share/tomcat9/bin
-#CMD ["catalina.sh", "run"]
+CMD ["catalina.sh", "run"]
 #RUN ["systemctl start tomcat9"]
 #CMD ["git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello"]
 #WORKDIR boxfuse-sample-java-war-hello
