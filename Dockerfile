@@ -13,5 +13,5 @@ CMD ["catalina.sh", "run"]
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello
 WORKDIR $CATALINA_HOME/boxfuse-sample-java-war-hello
 RUN mvn package
-ADD /usr/share/tomcat9/boxfuse-sample-java-war-hello/target/hello-1.0.war /usr/share/tomcat9/webapps
+RUN cp target/hello-1.0.war /usr/share/tomcat9/webapps/
 
