@@ -1,5 +1,7 @@
 FROM ubuntu:20.04
 RUN apt-get update -y
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get install tzdata -y
 RUN apt-get install git default-jdk tomcat9 -y
 ENV CATALINA_HOME /usr/share/tomcat9
 ENV PATH $CATALINA_HOME/bin:$PATH
