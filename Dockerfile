@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 RUN apt-get update -y
 RUN apt install git java default-jdk tomcat9 tomcat9-admin maven
 CMD ["systemctl enable --now tomcat9"]
